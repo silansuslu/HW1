@@ -3,25 +3,42 @@
  */
 package HW1;
 
-import java.util.ArrayList;
-
 public class App {
     public String getGreeting() {
-        return "Hello world.";
+        return "Hello! ";
     }
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
     }
 
-    public static boolean search(ArrayList<Integer> array, int e) {
-        System.out.println("inside search");
+    public static String createMailAddress(String[] names, int index, Integer choice, String extension) { // 0-remove vowel,
+                                                                                                          // 1-doubled vowel
+        String name = names[index];
+        String newName = "";
+        int size = names[index].length();
+        if (choice.equals(0)) {
+            for (int i = 0; i < size; i++) {
+                if (name.charAt(i) == 'a' || name.charAt(i) == 'e' || name.charAt(i) == 'i' || name.charAt(i) == 'o'
+                        || name.charAt(i) == 'u') {
+                    continue;
+                } else
+                    newName += name.charAt(i);
+            }
 
-        if(array == null) return false;
-
-        for(int elt: array) {
-            if(elt == e) return true;
+        } else if(choice.equals(1)) {
+            for(int i = 0; i < size ; i++ ) {
+                if(name.charAt(i)=='a' || name.charAt(i)=='e' || name.charAt(i)=='i' || name.charAt(i)=='o' ||name.charAt(i)=='u') {
+                    newName += name.charAt(i);
+                }
+                else
+                    continue;
+            }
         }
-        return false;
+
+        newName = newName + (index + 1) + "@" + extension + ".com";
+        return newName;
+
     }
+
 }
