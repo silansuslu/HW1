@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+
     @Test
     public void appHasAGreeting() {
         App classUnderTest = new App();
@@ -18,6 +19,7 @@ class AppTest {
         String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
         assertEquals("mlhsbm5@hotmail.com", App.createMailAddress(names, 4, 0, "hotmail"));
     }
+
     @Test
     public void testDublicateVowels() {
         String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
@@ -34,5 +36,17 @@ class AppTest {
     public void testIncorrectIndex() {
         String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
         assertNull(App.createMailAddress(names, 5, 0, "hotmail"));
+    }
+
+    @Test
+    public void testIncorrectExtension() {
+        String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
+        assertNull(App.createMailAddress(names, 3, 0, "edu.tr"));
+    }
+
+    @Test
+    public void testIncorrectOption() {
+        String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
+        assertNull(App.createMailAddress(names, 1, 3, "gmail"));
     }
 }

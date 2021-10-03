@@ -32,7 +32,6 @@ dependencies {
 
     implementation "com.sparkjava:spark-core:2.9.3"
     implementation "com.sparkjava:spark-template-mustache:2.7.1"
-
 }
 
 application {
