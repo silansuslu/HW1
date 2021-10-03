@@ -12,8 +12,8 @@ public class App {
         System.out.println(new App().getGreeting());
     }
 
-    public static String createMailAddress(String[] names, int index, Integer choice, String extension) { // 0-remove vowel,
-                                                                                                          // 1-doubled vowel
+    public static String createMailAddress(String[] names, int index, Integer choice, String extension) { // 0-removeVowel, 1-dublicateVowel
+                                                                                                        
         String name = names[index];
         String newName = "";
         int size = names[index].length();
@@ -29,10 +29,10 @@ public class App {
         } else if(choice.equals(1)) {
             for(int i = 0; i < size ; i++ ) {
                 if(name.charAt(i)=='a' || name.charAt(i)=='e' || name.charAt(i)=='i' || name.charAt(i)=='o' ||name.charAt(i)=='u') {
-                    newName += name.charAt(i);
+                    newName += name.charAt(i)+ "" + name.charAt(i);
                 }
                 else
-                    continue;
+                    newName += name.charAt(i);
             }
         }
 

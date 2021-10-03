@@ -19,8 +19,8 @@ class AppTest {
         assertEquals("mlhsbm5@hotmail.com", App.createMailAddress(names, 4, 0, "hotmail"));
     }
     @Test
-    public void testRemoveConsanant() {
+    public void testDublicateVowels() {
         String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
-        assertEquals("aaa4@hotmail.com", App.createMailAddress(names, 3, 1, "hotmail"));
+        assertEquals("siilaan1@hotmail.com", App.createMailAddress(names, 0, 1, "hotmail"));
     }
 }
