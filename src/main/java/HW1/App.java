@@ -12,11 +12,17 @@ public class App {
         System.out.println(new App().getGreeting());
     }
 
-    public static String createMailAddress(String[] names, int index, Integer choice, String extension) { // 0-removeVowel, 1-dublicateVowel
-                                                                                                        
+    public static String createMailAddress(String[] names, int index, Integer choice, String extension) { // 0-removeVowel,
+                                                                                                          // 1-dublicateVowel
+        if(names.length == 0)
+            return null;
+        if(index > names.length-1 )
+            return null;
+
         String name = names[index];
         String newName = "";
         int size = names[index].length();
+
         if (choice.equals(0)) {
             for (int i = 0; i < size; i++) {
                 if (name.charAt(i) == 'a' || name.charAt(i) == 'e' || name.charAt(i) == 'i' || name.charAt(i) == 'o'
@@ -26,12 +32,12 @@ public class App {
                     newName += name.charAt(i);
             }
 
-        } else if(choice.equals(1)) {
-            for(int i = 0; i < size ; i++ ) {
-                if(name.charAt(i)=='a' || name.charAt(i)=='e' || name.charAt(i)=='i' || name.charAt(i)=='o' ||name.charAt(i)=='u') {
-                    newName += name.charAt(i)+ "" + name.charAt(i);
-                }
-                else
+        } else if (choice.equals(1)) {
+            for (int i = 0; i < size; i++) {
+                if (name.charAt(i) == 'a' || name.charAt(i) == 'e' || name.charAt(i) == 'i' || name.charAt(i) == 'o'
+                        || name.charAt(i) == 'u') {
+                    newName += name.charAt(i) + "" + name.charAt(i);
+                } else
                     newName += name.charAt(i);
             }
         }

@@ -23,4 +23,16 @@ class AppTest {
         String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
         assertEquals("siilaan1@hotmail.com", App.createMailAddress(names, 0, 1, "hotmail"));
     }
+
+    @Test
+    public void testEmptyArray() {
+        String[] names = new String[0];
+        assertNull(App.createMailAddress(names, 2, 0, "hotmail"));
+    }
+
+    @Test
+    public void testIncorrectIndex() {
+        String[] names = { "silan", "melis", "oguzhan", "arkadas", "mailhesabim" };
+        assertNull(App.createMailAddress(names, 5, 0, "hotmail"));
+    }
 }
