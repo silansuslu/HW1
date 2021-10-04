@@ -29,6 +29,9 @@ public class App {
         // Logger logger = LogManager.getLogger(App.class);
         // logger.error("Hello");
 
+        int port = Integer.parseInt(System.getenv("PORT"));
+        port(port);
+
         get("/", (req, res) -> "Yuppii!!");
 
         post("/compute", (req, res) -> {
